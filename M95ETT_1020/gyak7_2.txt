@@ -1,0 +1,3 @@
+create table Tanfolyam (tkod int primary key, ar int, tipus char(30), mnegnevezes char (100));
+
+create table Resztvevo (tajszam int primary key, nev char(100), lakcim varchar(100), befizetes int, foreign key (befizetes) references Tanfolyam);

@@ -1,0 +1,9 @@
+create table Gyarto (adoszam int primary key, nev Char(30), telephely int, irsz char(4), varos char (40), utca char(100));
+
+create table Termek (tkod int primary key, nev char(50), ear int, gyarto int, foreign key (gyarto) references Gyarto);
+
+create table Egysegek (aru int, db int, foreign key (aru) references Termek);
+
+create table Alkatresz (akod int, nev char(50));
+
+create table Komponens (termek int, alkatresz int, foreign key (termek) references Termek, foreign key (alkatresz) references Alkatresz);
